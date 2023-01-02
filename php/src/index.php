@@ -5,14 +5,8 @@
 <body>
 <!--Begin PHP with -->
 
-<?php
 
-echo 'PHP Calculator<br />';
-
-
-//End PHP with
-?>
-
+<h1>PHP Calculator</h1>
 <form>
     <input type="text" name="number_one" placeholder="first number">
     <input type="text" name="number_two" placeholder="second number">
@@ -25,10 +19,16 @@ echo 'PHP Calculator<br />';
     </select>
     <br />
     <button type="submit" name="submit" value="submit">Calculate</button>
-
 </form>
 
+<h4> Result is: </h4>
+<?php
+    // check if submit has been clicked
+    if(isset($_GET['submit'])) {
 
+    }
+
+?>
 
 </body>
 
