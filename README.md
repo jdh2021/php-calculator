@@ -5,7 +5,7 @@ This repository stores small projects I'm working on using PHP and HTML with a D
 I built a calculator using PHP. The first number is input, an operator is selected from the dropdown, and a second number is input. Clicking `Calculate` produces the result of the calculation.
 
 ### Contact Form
-I'm building a contact form with PHP based on [this](https://www.youtube.com/watch?v=4q0gYjAVonI&t=14s) tutorial from Dani Krossing. This form allows a message to be emailed from a webpage. 
+I built a contact form with PHP based on [this](https://www.youtube.com/watch?v=4q0gYjAVonI&t=14s) tutorial from Dani Krossing. This form allows a message to be emailed from a live webpage. 
 
 ### Setup
 
