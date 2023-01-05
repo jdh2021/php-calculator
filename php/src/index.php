@@ -75,6 +75,53 @@
     // preg_replace replaces characters in string with another set of characters
     $replaced_string=preg_replace("/expressions/", "PHP", $string);
     echo $replaced_string;
+
+    // search for specific character or other character with |
+    echo "<br />";
+    echo preg_match("/(y|s)/", $string);
+    // search for any of multiple characters with []
+    echo "<br />";
+    echo preg_match("/[ghi]/", $string);
+    // search for characters that are not those listed with ^
+    echo "<br />";
+    echo preg_match("/[^ghi]/", $string);
+    // search for range with [] and -
+    echo "<br />";
+    echo preg_match("/[a-z]/", $string);
+    echo "<br />";
+    echo preg_match("/[0-9]/", $string);
+    // search for quantifiers, * searches for 0 or more and returns 0 or 1 boolean
+    echo "<br />";
+    echo preg_match("/T*/", $string);
+    echo "<br />";
+    /* 
+    inserts all characters that come after T into array. T shows where to start. 
+    . to indicate all characters. Letter after * to indicate stopping character
+    "*" indicates 0 or more
+    */
+    preg_match_all("/T.*n/", $string, $array);
+    print_r($array);
+    echo "<br />";
+    // + searchig for at least one character
+    preg_match_all("/T+/", $string, $array);
+    print_r($array);
+    echo "<br />";
+    // start at 1, any character after than until get to final "2"
+    // * is greedy quantifier
+    preg_match_all("/1.*2/", $string, $array);
+    print_r($array);
+    // ? is lazy quantifier
+    echo "<br />";
+    preg_match_all("/1.*?2/", $string, $array);
+    print_r($array);
+    /* {} to search for quantity of characters in a row, commas to search for 1 OR 2 (no spaces)
+    */
+    echo "<br />";
+    preg_match_all("/T{1,2}/", $string, $array);
+    print_r($array);
+
+    
+
 ?>
 
 
