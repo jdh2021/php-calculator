@@ -120,8 +120,23 @@
     preg_match_all("/T{1,2}/", $string, $array);
     print_r($array);
 
-    
+    // character classses
+    /* search \s (white-space character), \S (non white-space character), \d (digit character), \D (non-digit character),
+    \w (word character), \W (non-word chracter)
+    */
+    echo "<br />";
+    echo preg_match("/\s{3}/", $string, $array);
 
+    // anchors 
+    echo "<br />";
+    // ^ if string starts with a specific character
+    echo preg_match("/^S/", $string);
+    // $ after if string ends with a specific character
+    echo "<br />";
+    echo preg_match("/.$/", $string);
+    echo "<br />";
+    // if string starts with S and ends with . ".*" to grab all characters after S
+    echo preg_match("/^S.*.\.$/", $string);
 ?>
 
 
