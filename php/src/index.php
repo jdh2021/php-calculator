@@ -55,7 +55,29 @@
         <input type="text" name="subject" placeholder="Your Subject">
         <textarea name="message" placeholder="Message"></textarea>
         <button type="submit" name="submit">Send Mail</button>
-</form>
+    </form>
+
+<h2>Functions with Regular Expressions</h2>
+<?php 
+    $string="String: Testing functions using regular expressions. There are two instances of \"expressions\".";
+    echo $string;
+    echo "<br />";
+    // first parameter is what we want to search for, second parameter is string to search
+    if(preg_match("/expressions/", $string)) {
+        echo "A match was found";
+    }
+    echo "<br />";
+    // inserts all results from string into array
+    if(preg_match_all("/expressions/", $string, $array)) {
+        print_r($array);
+    }
+    echo "<br />";
+    // preg_replace replaces characters in string with another set of characters
+    $replaced_string=preg_replace("/expressions/", "PHP", $string);
+    echo $replaced_string;
+?>
+
+
 </body>
 
 </html>
