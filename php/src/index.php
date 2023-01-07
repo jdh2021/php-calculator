@@ -150,6 +150,33 @@
     $birth_year = "";
     $validation_error = "";
     $existing_users = ["test1", "test2"];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // use htmlspecialchars to avoid interpreting HTML, man-in-the-middle attack
+        $raw_name = trim(htmlspecialchars($_POST["name"]));
+        // check if $raw_name already exists as a username using in_array
+        if(in_array($raw_name, $existing_users)) {
+          $validation_error .= "This username is already taken." ;
+        } else {
+          // if username doesn't already exist, assign raw_name to name
+          $name = $raw_name;
+        }
+        // check that radio selection isn't altered to a different value using in_array
+        $raw_communication = $_POST["communication"];
+        if (in_array($raw_communication, ['email', 'phone', 'text'])) {
+            $communication = $raw_communication;
+          } else {
+            $validation_error .= "You must select email, phone, or text.";
+          }
+        // check that email is valid
+        $raw_email = $_POST["email"];
+        if (filter_var($raw_email, FILTER_VALIDATE_EMAIL)){
+            $email = $raw_email;
+          } else {
+            $validation_error .= "Please enter a valid email.";
+          } 
+        $birth_year = $_POST["birth_year"];
+      }
 ?>
     <form method="post" action="">
         <p>
@@ -157,9 +184,9 @@
         </p>
         <p>
             Select a preferred contact method:
-            <input type="radio" name="email" value="email" <?php echo ($communication=='email')?'checked':'' ?>> Email
-            <input type="radio" name="phone" value="phone" <?php echo ($communication=='phone')?'checked':'' ?>> Phone
-            <input type="radio" name="text" value="text" <?php echo ($communication=='text')?'checked':'' ?>> Text
+            <input type="radio" name="communication" value="email" <?php echo ($communication=='email')?'checked':'' ?>> Email
+            <input type="radio" name="communication" value="phone" <?php echo ($communication=='phone')?'checked':'' ?>> Phone
+            <input type="radio" name="communication" value="text" <?php echo ($communication=='text')?'checked':'' ?>> Text
         </p>
         <p>
             Enter your email:
