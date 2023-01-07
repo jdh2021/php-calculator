@@ -10,6 +10,8 @@ I built a contact form with PHP based on [this](https://www.youtube.com/watch?v=
 ### Searches with Regular Expressions
 I used preg_match, preg_match_all, and preg_replace with Regex patterns including quantifiers and anchors to search strings. 
 
+### User Profile Form
+I tested form validation and data sanitizing with PHP through a user profile form that makes use of trim, htmlspecialchars, filter_var, FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL, and in_array.
 
 ### Setup
 

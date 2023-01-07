@@ -139,9 +139,6 @@
     echo preg_match("/^S.*.\.$/", $string);
 ?>
 
-
-
-
 <h2>Create profile</h2>
 <?php
     $name = "";
@@ -175,7 +172,15 @@
           } else {
             $validation_error .= "Please enter a valid email.";
           } 
-        $birth_year = $_POST["birth_year"];
+        $raw_birth_year = $_POST["birth_year"];
+        // range to restrict birth years entered by user with options
+        $options = ["options" => ["min_range" => 1915, "max_range" => date("Y")]];
+        // check that integer entered by user is between 1915 and current year
+        if (filter_var($raw_birth_year, FILTER_VALIDATE_INT, $options)) {
+            $birth_year = $raw_birth_year;
+          } else {
+            $validation_error .= "Please enter a valid birth year.";
+          }
       }
 ?>
     <form method="post" action="">
@@ -199,12 +204,12 @@
         <p>
         <span style="color:red;"><?= $validation_error;?></span>
         </p>
-        <input type="submit" value="Submit">
+        <input type="submit" value="submit">
     </form>
   
 <h2>Preview:</h2>
     <p>
-    Name: <?=$name;?>
+    Username: <?=$name;?>
     </p>
     <p>
     Communication Preference: <?=$communication;?>
@@ -213,7 +218,8 @@
     Email: <?=$email;?>
     </p>
     <p>
-    Age: <?=date("Y")-$birth_year;?>
+    <!-- conditionally render empty string or age-->
+    Age: <?=($birth_year==="")? "" : date("Y")-$birth_year;?>
     </p>
 
 </body>
