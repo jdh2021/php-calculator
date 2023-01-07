@@ -140,6 +140,55 @@
 ?>
 
 
+
+
+<h2>Create profile</h2>
+<?php
+    $name = "";
+    $communication = "";
+    $email = "";
+    $birth_year = "";
+    $validation_error = "";
+    $existing_users = ["test1", "test2"];
+?>
+    <form method="post" action="">
+        <p>
+            Enter a username: <input type="text" name="name" value="<?php echo $name;?>" >
+        </p>
+        <p>
+            Select a preferred contact method:
+            <input type="radio" name="email" value="email" <?php echo ($communication=='email')?'checked':'' ?>> Email
+            <input type="radio" name="phone" value="phone" <?php echo ($communication=='phone')?'checked':'' ?>> Phone
+            <input type="radio" name="text" value="text" <?php echo ($communication=='text')?'checked':'' ?>> Text
+        </p>
+        <p>
+            Enter your email:
+            <input type="text" name="email" value="<?php echo $email;?>" >
+        </p>
+        <p>
+            Enter your birth year:
+            <input type="text" name="birth_year" value="<?php echo $birth_year;?>">
+        </p>
+        <p>
+        <span style="color:red;"><?= $validation_error;?></span>
+        </p>
+        <input type="submit" value="Submit">
+    </form>
+  
+<h2>Preview:</h2>
+    <p>
+    Name: <?=$name;?>
+    </p>
+    <p>
+    Communication Preference: <?=$communication;?>
+    </p>
+    <p>
+    Email: <?=$email;?>
+    </p>
+    <p>
+    Age: <?=date("Y")-$birth_year;?>
+    </p>
+
 </body>
 
 </html>
