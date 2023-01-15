@@ -13,11 +13,15 @@ I used preg_match, preg_match_all, and preg_replace with Regex patterns includin
 ### User Profile Form
 I tested form validation and data sanitizing with PHP through a user profile form that makes use of trim, htmlspecialchars, filter_var, FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL, and in_array.
 
+
+### PHP OOP 
+I'm exploring object-oriented PHP following [this](https://www.youtube.com/playlist?list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh) series from Dani Krossing. 
+
 ### Setup
 
 - Install [Docker](https://docs.docker.com/desktop/install/mac-install/) 
 - Run `docker-compose build` then `docker-compose up` in terminal. 
-- Access in the browser at http://localhost:8000/
+- Access in the browser at http://localhost:8000/ and http://localhost:8000/includes/newclass.inc.php
 
 
 
