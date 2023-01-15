@@ -1,3 +1,7 @@
+<?php
+    include 'includes/person.inc.php';
+?>
+
 <html>
 <head>
 <title>PHP Projects</title>
@@ -222,6 +226,11 @@
     Age: <?=($birth_year==="")? "" : date("Y")-$birth_year;?>
     </p>
 
+<?php
+
+    $example = new Pet();
+    echo $example->owner();
+?>
 </body>
 
 </html>
