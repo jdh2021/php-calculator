@@ -227,10 +227,24 @@
     </p>
 
 <?php
-
     $example = new Pet();
     echo $example->owner();
 ?>
+
+<!--need to instantiate class first -->
+<?php 
+    // create object first before able to use class (instantiate class)
+    // object is copy of class. class is template for objects
+    $person1 = new Person();
+    $person1->setName("Jen");
+    echo $person1->name;
+
+    $person2 = new Person();
+    $person2->setName("Joan");
+    echo $person2->name;
+    
+?>
+
 </body>
 
 </html>

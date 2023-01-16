@@ -8,11 +8,23 @@ public - access data from outside class
 protected - access data from w/i same class or any class that extends
 */
 
+
 class Person {
     // private properties vs. protected properties
     protected $first="Jennifer";
     private $last="Hightower";
     private $age = "99";
+
+    // classes let us assign values to properties when we create objects
+    // don't need to assign a value w/i class
+    public $name;
+    public $eyeColor;
+
+    // method
+    public function setName($name) {
+        // 'this' points to class we're inside of
+        $this->name = $name;
+    }
 
     // public method
     public function owner() {
