@@ -226,23 +226,35 @@
     Age: <?=($birth_year==="")? "" : date("Y")-$birth_year;?>
     </p>
 
-<?php
-    $example = new Pet();
-    echo $example->owner();
-?>
+<h2>PHP OOP</h2>
 
 <!--need to instantiate class first -->
 <?php 
     // create object first before able to use class (instantiate class)
     // object is copy of class. class is template for objects
-    $person1 = new Person();
-    $person1->setName("Jen");
-    echo $person1->name;
-
-    $person2 = new Person();
-    $person2->setName("Joan");
-    echo $person2->name;
     
+    // $person1 = new Person();
+    // $person1->setName("Jen");
+    // echo $person1->name;
+
+    // $person2 = new Person();
+    // $person2->setName("Joan");
+    // echo $person2->name;
+
+    // parentheses needed for instantiating with constructor when parameters must be passed in
+    $person1 = new Person("Janet", "Brown", "Alaska");
+    echo "<br /> $person1->name";
+    echo "<br /> $person1->eyeColor ";
+    // can still change name using method
+    $person1->setName("Jordan");
+    echo "<br /> $person1->name";
+
+    $person2 = new Person("Joan", "Green", "New York");
+    // unset destroys object, triggers destructor
+    unset($person2);
+    echo "<br /> $person2->name";
+
+
 ?>
 
 </body>
