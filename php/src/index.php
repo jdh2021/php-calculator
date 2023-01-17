@@ -1,5 +1,7 @@
 <?php
- include 'includes/autoloader.inc.php';
+    // PHP is loose language; strict mode enforces strict types (1 is true; 0 is false)
+    declare(strict_types =1);
+    include 'includes/autoloader.inc.php';
 ?>
 
 <html>
@@ -248,6 +250,15 @@
     // can still change name using method
     $person1->setName("Jordan");
     echo "<br /> $person1->name";
+
+
+    try {
+        // $person1->setName(2);
+        $person1->setName('Joaquin');
+        echo "<br />" . $person1->getName();
+    } catch (TypeError $error) {
+        echo "<br /> Error: " . $error->getMessage();
+    }
 
     // $person2 = new Person("Joan", "Green", "New York");
     // // unset destroys object, triggers destructor

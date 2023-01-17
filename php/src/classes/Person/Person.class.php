@@ -2,6 +2,7 @@
 
 // multiple classes can be combined within one file, although not best practice
 // properties are similar to variables; methods are similar to functions
+
 /* 
 private - only access data from inside class
 public - access data from outside class
@@ -23,8 +24,22 @@ class Person {
     public $eyeColor;
     public $state;
 
-    // method
-    public function setName($name) {
+    /*
+    type declarations are available in PHP for:
+        -class
+        -self (reference same class)
+        -array
+        -callable
+        -bool
+        -float
+        -int
+        -string
+        -iterable
+        -object
+    */
+
+    // method, setting type as string
+    public function setName(string $name) {
         // 'this' points to class we're inside of
         $this->name = $name;
     }
