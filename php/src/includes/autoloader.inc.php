@@ -9,7 +9,7 @@
         // pass in a variable as soon as new instance of a class is created
         $path = "classes/";
         $extension =".class.php";
-        $fullPath = $path . $className . $extension;
+        $fullPath = $path . str_replace("\\", "/", $className) . $extension;
 
         // checks if file (or class) was found
         if(!file_exists($fullPath)) {

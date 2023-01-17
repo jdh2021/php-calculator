@@ -242,7 +242,7 @@
     // echo $person2->name;
 
     // parentheses needed for instantiating with constructor when parameters must be passed in
-    $person1 = new Person("Janet", "Brown", "Alaska");
+    $person1 = new Person\Person("Janet", "Brown", "Alaska");
     echo "<br /> $person1->name";
     echo "<br /> $person1->eyeColor ";
     // can still change name using method
@@ -259,10 +259,10 @@
     // variable symbol needed since not a property of object
     // :: to access static properties
     echo "<br />";
-    echo Person::$drinkingAge;
-    Person::setDrinkingAge(18);
+    echo Person\Person::$drinkingAge;
+    Person\Person::setDrinkingAge(18);
     echo "<br />";
-    echo Person::$drinkingAge;
+    echo Person\Person::$drinkingAge;
 
    // can access static properties from non-static, regular methods
     echo "<br />";

@@ -8,6 +8,8 @@ public - access data from outside class
 protected - access data from w/i same class or any class that extends
 */
 
+namespace Person;
+
 class Person {
     // private properties vs. protected properties
     // often times people will set properties to private and then access by creating a public method
