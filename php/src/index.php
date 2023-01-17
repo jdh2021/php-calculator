@@ -249,12 +249,24 @@
     $person1->setName("Jordan");
     echo "<br /> $person1->name";
 
-    $person2 = new Person("Joan", "Green", "New York");
-    // unset destroys object, triggers destructor
-    unset($person2);
-    echo "<br /> $person2->name";
+    // $person2 = new Person("Joan", "Green", "New York");
+    // // unset destroys object, triggers destructor
+    // unset($person2);
+    // echo "<br /> $person2->name";
 
 
+    // access static properties w/o needing to create an object from class
+    // variable symbol needed since not a property of object
+    // :: to access static properties
+    echo "<br />";
+    echo Person::$drinkingAge;
+    Person::setDrinkingAge(18);
+    echo "<br />";
+    echo Person::$drinkingAge;
+
+   // can access static properties from non-static, regular methods
+    echo "<br />";
+    echo $person1->getDA();
 ?>
 
 </body>

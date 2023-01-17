@@ -51,8 +51,28 @@ class Person {
     // public method
     public function owner() {
         // variable 'this' references data inside same class
-        $a = $this->first;
+        $a = $this->first; 
         return $a;
+    }
+
+    /*
+    static properties/methods - going inside class, create property/method without needing to create an object first
+    can't access static property from inside class, not part of object created
+    static is used to create property method that isn't directly linked to creating object from class
+    static properites/methods - don't have to be part of an object, but can be categorized as part of class
+    */
+    public static $drinkingAge = 21;
+
+    // static method
+    public static function setDrinkingAge($newDA) {
+        // self is like 'this' for static properties
+        self::$drinkingAge = $newDA;
+    }
+
+    // referencing static property from non-static method
+    public function getDA() {
+        // self is like 'this' for static properties
+        return self::$drinkingAge;
     }
 }
 
