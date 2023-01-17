@@ -1,5 +1,5 @@
 <?php
-    include 'includes/person.inc.php';
+ include 'includes/autoloader.inc.php';
 ?>
 
 <html>
