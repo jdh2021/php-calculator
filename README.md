@@ -21,7 +21,7 @@ I'm exploring object-oriented PHP following [this](https://www.youtube.com/playl
 
 - Install [Docker](https://docs.docker.com/desktop/install/mac-install/) 
 - Run `docker-compose build` then `docker-compose up` in terminal. 
-- Access in the browser at http://localhost:8000/ and http://localhost:8000/includes/newclass.inc.php
+- Access in the browser at http://localhost:8000/.
 
 
 

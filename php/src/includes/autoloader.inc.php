@@ -1,13 +1,19 @@
 <?php
     //built-in function that looks for new instantiated class
-    // spl_autoload_register
     // pass function inside parentheses
     spl_autoload_register('myAutoLoader');
 
     //user-defined function
     function myAutoLoader($className) {
-        // pass in a variable as soon as new instance of a class is created
-        $path = "classes/";
+        // url for current website
+        $url = $_SERVER["HTTP_POST"].$_SERVER["REQUEST_URI"];
+
+        // if inside includes folder, directory path needs to be updated
+        if(strpos($url, 'includes') !== false) {
+            $path == "../classes/";
+        } else {
+            $path = "classes/";
+        }
         $extension =".class.php";
         $fullPath = $path . str_replace("\\", "/", $className) . $extension;
 

@@ -9,8 +9,7 @@
 <title>PHP Projects</title>
 </head>
 <body>
-<!--Begin PHP with -->
-
+<!--procedural PHP calculator -->
 <h2>PHP Basic Calculator</h2>
 <form method="get">
     <input type="text" name="number_one" placeholder="first number">
@@ -52,6 +51,22 @@
     }
 
 ?>
+
+<!-- PHP OOP Calculator -->
+
+
+<form action="includes/calc.inc.php" method="POST">
+    <h2> PHP OOP Calculator </h2>
+    <input type="number" name="num1" placeholder="First Number">
+    <select name="operate">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+    </select>
+    <input type="number" name="num2" placeholder="Second Number">
+    <button type="submit" name="submit">Calculate</button>
+</form>
 
 <h2>PHP Contact Form</h2>
     <p>Send Email</p>
