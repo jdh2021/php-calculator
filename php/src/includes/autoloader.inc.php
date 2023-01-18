@@ -1,4 +1,4 @@
-<?php
+ <?php
     //built-in function that looks for new instantiated class
     // pass function inside parentheses
     spl_autoload_register('myAutoLoader');
@@ -6,11 +6,11 @@
     //user-defined function
     function myAutoLoader($className) {
         // url for current website
-        $url = $_SERVER["HTTP_POST"].$_SERVER["REQUEST_URI"];
+        $url = $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 
         // if inside includes folder, directory path needs to be updated
         if(strpos($url, 'includes') !== false) {
-            $path == "../classes/";
+            $path = "../classes/";
         } else {
             $path = "classes/";
         }
@@ -21,7 +21,6 @@
         if(!file_exists($fullPath)) {
             return false;
         }
-        include_once $fullPath;
-
+        require_once $fullPath;
     }
 ?>

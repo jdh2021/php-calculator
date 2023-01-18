@@ -17,19 +17,19 @@ class Calc {
 
     public function calculate() {
         switch($this->operator) {
-            case 'Add':
+            case 'add':
                 $result = $this->num1 + $this->num2;
                 return $result;
                 break;
-            case 'Subtract':
+            case 'subtract':
                 $result = $this->num1 - $this->num2;
                 return $result;
                 break;
-            case 'Multiply':
+            case 'multiply':
                 $result = $this->num1 * $this->num2;
                 return $result;
                 break;
-            case 'Divide':
+            case 'divide':
                 $result = $this->num1 / $this->num2;
                 return $result;
                 break;
