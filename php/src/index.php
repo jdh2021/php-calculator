@@ -53,8 +53,6 @@
 ?>
 
 <!-- PHP OOP Calculator -->
-
-
 <form action="includes/calc.inc.php" method="POST">
     <h2> PHP OOP Calculator </h2>
     <input type="number" name="num1" placeholder="First Number">
