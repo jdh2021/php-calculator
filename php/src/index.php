@@ -2,6 +2,7 @@
     // PHP is loose language; strict mode enforces strict types (1 is true; 0 is false)
     declare(strict_types =1);
     include 'includes/autoloader.inc.php';
+
 ?>
 
 <html>
@@ -291,6 +292,8 @@
    // can access static properties from non-static, regular methods
     echo "<br />";
     echo $person1->getDA();
+
+
 ?>
 
 </body>
