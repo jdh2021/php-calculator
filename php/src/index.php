@@ -275,7 +275,7 @@
     }
 
     // $person2 = new Person("Joan", "Green", "New York");
-    // // unset destroys object, triggers destructor
+    // unset destroys object, triggers destructor
     // unset($person2);
     // echo "<br /> $person2->name";
 
@@ -293,6 +293,16 @@
     echo "<br />";
     echo $person1->getDA();
 
+
+    // anonymous classes - don't get stored in website memory, less heavy to load, only used in one place in code
+    // class gets deleted immediately after object gets created
+    $newObj = new class {
+        public function testAnonymousClass() {
+            echo "Hello World!";
+        }
+    };
+
+    $newObj->testAnonymousClass();
 
 ?>
 
